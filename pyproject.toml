@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "h2-vqe"
+version = "1.0.0"
+description = "Variational Quantum Eigensolver study of the H2 molecule"
+requires-python = ">=3.10"
+dependencies = [
+    "qiskit>=2.0",
+    "qiskit-algorithms>=0.4",
+    "qiskit-nature>=0.8",
+    "pyscf>=2.8",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
